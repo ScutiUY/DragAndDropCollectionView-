@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A673D915B66579734DCBD1FF /* Pods_DragAndDropCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */; };
 		F0EA18A92832C95D00BB5F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */; };
 		F0EA18AB2832C95D00BB5F28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */; };
-		F0EA18AD2832C95D00BB5F28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AC2832C95D00BB5F28 /* ViewController.swift */; };
+		F0EA18AD2832C95D00BB5F28 /* ExistingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AC2832C95D00BB5F28 /* ExistingCollectionViewController.swift */; };
 		F0EA18B02832C95D00BB5F28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18AE2832C95D00BB5F28 /* Main.storyboard */; };
 		F0EA18B22832C95E00BB5F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18B12832C95E00BB5F28 /* Assets.xcassets */; };
 		F0EA18B52832C95E00BB5F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18B32832C95E00BB5F28 /* LaunchScreen.storyboard */; };
+		F0EA18BD2832E7EA00BB5F28 /* NewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */; };
+		F0EA18BF2832E95800BB5F28 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18BE2832E95800BB5F28 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02E47761BC6214436909B70C /* Pods-DragAndDropCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragAndDropCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
+		6C8DB5E37F96A9CCDBF7E8D3 /* Pods-DragAndDropCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragAndDropCollectionView.release.xcconfig"; path = "Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView.release.xcconfig"; sourceTree = "<group>"; };
+		A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragAndDropCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EA18A52832C95D00BB5F28 /* DragAndDropCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragAndDropCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0EA18AC2832C95D00BB5F28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0EA18AC2832C95D00BB5F28 /* ExistingCollectionViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = ExistingCollectionViewController.swift; sourceTree = "<group>"; };
 		F0EA18AF2832C95D00BB5F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0EA18B12832C95E00BB5F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0EA18B42832C95E00BB5F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0EA18B62832C95E00BB5F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewController.swift; sourceTree = "<group>"; };
+		F0EA18BE2832E95800BB5F28 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A673D915B66579734DCBD1FF /* Pods_DragAndDropCollectionView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4960F603683CC7F7A21F4A6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02E47761BC6214436909B70C /* Pods-DragAndDropCollectionView.debug.xcconfig */,
+				6C8DB5E37F96A9CCDBF7E8D3 /* Pods-DragAndDropCollectionView.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E49BAC1AC9C854F75493CE38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0CCEF0E283464F700892D48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0EA18BE2832E95800BB5F28 /* CollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F0EA189C2832C95C00BB5F28 = {
 			isa = PBXGroup;
 			children = (
 				F0EA18A72832C95D00BB5F28 /* DragAndDropCollectionView */,
 				F0EA18A62832C95D00BB5F28 /* Products */,
+				4960F603683CC7F7A21F4A6B /* Pods */,
+				E49BAC1AC9C854F75493CE38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +92,11 @@
 		F0EA18A72832C95D00BB5F28 /* DragAndDropCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				F0CCEF0E283464F700892D48 /* View */,
 				F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */,
 				F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */,
-				F0EA18AC2832C95D00BB5F28 /* ViewController.swift */,
+				F0EA18AC2832C95D00BB5F28 /* ExistingCollectionViewController.swift */,
+				F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */,
 				F0EA18AE2832C95D00BB5F28 /* Main.storyboard */,
 				F0EA18B12832C95E00BB5F28 /* Assets.xcassets */,
 				F0EA18B32832C95E00BB5F28 /* LaunchScreen.storyboard */,
@@ -74,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0EA18B92832C95E00BB5F28 /* Build configuration list for PBXNativeTarget "DragAndDropCollectionView" */;
 			buildPhases = (
+				2C50C4C93D97FA8046CAF272 /* [CP] Check Pods Manifest.lock */,
 				F0EA18A12832C95D00BB5F28 /* Sources */,
 				F0EA18A22832C95D00BB5F28 /* Frameworks */,
 				F0EA18A32832C95D00BB5F28 /* Resources */,
+				F5123C305AF39341A726EEEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +173,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C50C4C93D97FA8046CAF272 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DragAndDropCollectionView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5123C305AF39341A726EEEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F0EA18A12832C95D00BB5F28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0EA18AD2832C95D00BB5F28 /* ViewController.swift in Sources */,
+				F0EA18BF2832E95800BB5F28 /* CollectionViewCell.swift in Sources */,
+				F0EA18AD2832C95D00BB5F28 /* ExistingCollectionViewController.swift in Sources */,
 				F0EA18A92832C95D00BB5F28 /* AppDelegate.swift in Sources */,
 				F0EA18AB2832C95D00BB5F28 /* SceneDelegate.swift in Sources */,
+				F0EA18BD2832E7EA00BB5F28 /* NewCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +366,7 @@
 		};
 		F0EA18BA2832C95E00BB5F28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02E47761BC6214436909B70C /* Pods-DragAndDropCollectionView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +395,7 @@
 		};
 		F0EA18BB2832C95E00BB5F28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C8DB5E37F96A9CCDBF7E8D3 /* Pods-DragAndDropCollectionView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
