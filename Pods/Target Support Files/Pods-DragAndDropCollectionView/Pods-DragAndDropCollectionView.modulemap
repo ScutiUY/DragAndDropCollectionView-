@@ -1,0 +1,6 @@
+framework module Pods_DragAndDropCollectionView {
+  umbrella header "Pods-DragAndDropCollectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}

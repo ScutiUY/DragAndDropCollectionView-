@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A673D915B66579734DCBD1FF /* Pods_DragAndDropCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */; };
+		F0B2874D283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2874C283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift */; };
 		F0EA18A92832C95D00BB5F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */; };
 		F0EA18AB2832C95D00BB5F28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */; };
-		F0EA18AD2832C95D00BB5F28 /* ExistingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AC2832C95D00BB5F28 /* ExistingCollectionViewController.swift */; };
+		F0EA18AD2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AC2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift */; };
 		F0EA18B02832C95D00BB5F28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18AE2832C95D00BB5F28 /* Main.storyboard */; };
 		F0EA18B22832C95E00BB5F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18B12832C95E00BB5F28 /* Assets.xcassets */; };
 		F0EA18B52832C95E00BB5F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18B32832C95E00BB5F28 /* LaunchScreen.storyboard */; };
@@ -22,10 +23,11 @@
 		02E47761BC6214436909B70C /* Pods-DragAndDropCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragAndDropCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		6C8DB5E37F96A9CCDBF7E8D3 /* Pods-DragAndDropCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragAndDropCollectionView.release.xcconfig"; path = "Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragAndDropCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B2874C283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellMovingCollectionViewController.swift; sourceTree = "<group>"; };
 		F0EA18A52832C95D00BB5F28 /* DragAndDropCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragAndDropCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0EA18AC2832C95D00BB5F28 /* ExistingCollectionViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = ExistingCollectionViewController.swift; sourceTree = "<group>"; };
+		F0EA18AC2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = CellMovingFromCollectionDelegateViewController.swift; sourceTree = "<group>"; };
 		F0EA18AF2832C95D00BB5F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0EA18B12832C95E00BB5F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0EA18B42832C95E00BB5F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,7 +97,8 @@
 				F0CCEF0E283464F700892D48 /* View */,
 				F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */,
 				F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */,
-				F0EA18AC2832C95D00BB5F28 /* ExistingCollectionViewController.swift */,
+				F0EA18AC2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift */,
+				F0B2874C283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift */,
 				F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */,
 				F0EA18AE2832C95D00BB5F28 /* Main.storyboard */,
 				F0EA18B12832C95E00BB5F28 /* Assets.xcassets */,
@@ -221,10 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0EA18BF2832E95800BB5F28 /* CollectionViewCell.swift in Sources */,
-				F0EA18AD2832C95D00BB5F28 /* ExistingCollectionViewController.swift in Sources */,
+				F0EA18AD2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift in Sources */,
 				F0EA18A92832C95D00BB5F28 /* AppDelegate.swift in Sources */,
 				F0EA18AB2832C95D00BB5F28 /* SceneDelegate.swift in Sources */,
 				F0EA18BD2832E7EA00BB5F28 /* NewCollectionViewController.swift in Sources */,
+				F0B2874D283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
