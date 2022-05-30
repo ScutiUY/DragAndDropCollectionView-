@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewCollectionViewController: UIViewController {
+class DragNDropCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
