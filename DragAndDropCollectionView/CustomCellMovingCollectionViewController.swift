@@ -26,19 +26,26 @@ class CustomCellMovingCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setLayout()
         // Do any additional setup after loading the view.
     }
     
     func setLayout(){
-        //      switch longPress.state {
-        //      case .began: startDragAtLocation(location: location)
-        //      case .changed: updateDragAtLocation(location: location)
-        //      case .ended: endDragAtLocation(location: location)
-        //      default:
-        //         break
-        //      }
+    
+        view.addSubview(collectionView)
+        
+        collectionView.snp.makeConstraints { make in
+           make.top.equalTo(view.snp.top)
+           make.width.equalTo(view.snp.width)
+           make.centerX.equalToSuperview()
+           make.bottom.equalToSuperview()
+        }
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
     }
+    
     func startDragAtLocation(location: CGPoint) {
        let cv = collectionView
        guard let indexPath = cv.indexPathForItem(at: location) else { return }
@@ -69,6 +76,7 @@ class CustomCellMovingCollectionViewController: UIViewController {
  //         self.draggingView?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
  //      }, completion: nil)
     }
+    
     func updateDragAtLocation(location: CGPoint) {
        guard let view = draggingView else { return }
        let cv = collectionView
@@ -82,6 +90,7 @@ class CustomCellMovingCollectionViewController: UIViewController {
           draggingIndexPath = newIndexPath
        }
     }
+    
     func endDragAtLocation(location: CGPoint) {
        guard let dragView = draggingView else { return }
        guard let indexPath = draggingIndexPath else { return }
@@ -121,4 +130,18 @@ class CustomCellMovingCollectionViewController: UIViewController {
        collectionView.collectionViewLayout.invalidateLayout()
        
     }
+}
+
+extension CustomCellMovingCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return color.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        cell.backgroundColor = color[indexPath.row]
+        return cell
+    }
+    
+    
 }
