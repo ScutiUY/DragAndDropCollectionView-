@@ -51,8 +51,9 @@ class CellMovingFromCollectionDelegateViewController: UIViewController {
       
    }
    @objc func handleLongPressGesture() {
-      print("gesture on")
+      
       let location = longPress.location(in: collectionView)
+      
       switch longPress.state {
       case .began: if let indexPath = collectionView.indexPathForItem(at: location) {
          collectionView.beginInteractiveMovementForItem(at: indexPath)
@@ -84,7 +85,7 @@ extension CellMovingFromCollectionDelegateViewController: UICollectionViewDelega
    
 }
 
-extension CellMovingFromCollectionDelegateViewController {
+extension CellMovingFromCollectionDelegateViewController: UICollectionViewDelegateFlowLayout {
    
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       return CGSize(width: 100, height: 100)
