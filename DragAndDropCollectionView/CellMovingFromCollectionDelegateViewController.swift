@@ -12,7 +12,7 @@ class CellMovingFromCollectionDelegateViewController: UIViewController {
    
    var longPress: UILongPressGestureRecognizer!
    
-   let color: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple, .brown, .black, .gray, .cyan]
+   var color: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple, .brown, .black, .gray, .cyan]
    
    lazy var collectionView: UICollectionView = {
       let layout = UICollectionViewFlowLayout()
@@ -45,11 +45,10 @@ class CellMovingFromCollectionDelegateViewController: UIViewController {
    
    func setGestureRecognizer() {
       print("longpress")
-      if longPress == nil {
-         longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture))
-         longPress.minimumPressDuration = 0.2
-         collectionView.addGestureRecognizer(longPress)
-      }
+      longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture))
+      longPress.minimumPressDuration = 0.2
+      collectionView.addGestureRecognizer(longPress)
+      
    }
    @objc func handleLongPressGesture() {
       print("gesture on")
@@ -85,7 +84,7 @@ extension CellMovingFromCollectionDelegateViewController: UICollectionViewDelega
    
 }
 
-extension CellMovingFromCollectionDelegateViewController: UICollectionViewDelegateFlowLayout {
+extension CellMovingFromCollectionDelegateViewController {
    
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       return CGSize(width: 100, height: 100)
@@ -97,7 +96,11 @@ extension CellMovingFromCollectionDelegateViewController: UICollectionViewDelega
    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
       return true
    }
+   
    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-      
+      let originColor = color[sourceIndexPath.row]
+      let destiColor = color[destinationIndexPath.row]
+      color[destinationIndexPath.row] = originColor
+      color[sourceIndexPath.row] = destiColor
    }
 }
