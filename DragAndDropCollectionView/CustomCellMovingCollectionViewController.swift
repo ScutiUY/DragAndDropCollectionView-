@@ -54,16 +54,14 @@ class CustomCellMovingCollectionViewController: UIViewController {
     }
     
     func startDragAtLocation(location: CGPoint) {
-        print("start")
         
         guard let indexPath = collectionView.indexPathForItem(at: location) else { return }
         
         guard collectionView.dataSource!.collectionView!(collectionView, canMoveItemAt: indexPath) == true else { return }
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         
-        originCell = cell
         originalIndexPath = indexPath
-        draggingIndexPath = indexPath
+
         draggingView = cell.snapshotView(afterScreenUpdates: true)
         draggingView!.frame = cell.frame
         
@@ -87,18 +85,20 @@ class CustomCellMovingCollectionViewController: UIViewController {
     
     func updateDragAtLocation(location: CGPoint) {
         
-        draggingView!.center = CGPoint(x: location.x + dragOffset.x, y: location.y + dragOffset.y)
-        if let newIndexPath = collectionView.indexPathForItem(at: location) {
-            collectionView.moveItem(at: draggingIndexPath!, to: newIndexPath)
-            draggingIndexPath = newIndexPath
-        }
+        guard draggingView != nil else { return }
         
+        draggingView!.center = CGPoint(x: location.x + dragOffset.x, y: location.y + dragOffset.y)
+        
+        if let newIndexPath = collectionView.indexPathForItem(at: location) {
+            collectionView.moveItem(at: originalIndexPath!, to: newIndexPath)
+            originalIndexPath = newIndexPath
+        }
     }
     
     func endDragAtLocation(location: CGPoint) {
         
         guard let dragView = draggingView else { return }
-        guard let indexPath = draggingIndexPath else { return }
+        guard let indexPath = originalIndexPath else { return }
         let cv = collectionView
         guard let datasource = cv.dataSource else { return }
 
@@ -108,6 +108,9 @@ class CustomCellMovingCollectionViewController: UIViewController {
         }
         if let newIndexPath = collectionView.indexPathForItem(at: location) {
             let cell = collectionView.cellForItem(at: newIndexPath)
+            cell!.isHidden = false
+        } else {
+            let cell = collectionView.cellForItem(at: originalIndexPath!)
             cell!.isHidden = false
         }
         
@@ -131,7 +134,6 @@ class CustomCellMovingCollectionViewController: UIViewController {
                 startDragAtLocation(location: location)
             }
         case .changed:
-            print("location in changed", location)
             updateDragAtLocation(location: location)
         case .ended:
             endDragAtLocation(location: location)
