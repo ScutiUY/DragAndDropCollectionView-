@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		A673D915B66579734DCBD1FF /* Pods_DragAndDropCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */; };
 		F0B2874D283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2874C283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift */; };
+		F0CBC49A283DAB4A006A2D31 /* CellMovingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CBC499283DAB4A006A2D31 /* CellMovingListTableViewController.swift */; };
 		F0EA18A92832C95D00BB5F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */; };
 		F0EA18AB2832C95D00BB5F28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */; };
 		F0EA18AD2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18AC2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift */; };
 		F0EA18B02832C95D00BB5F28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18AE2832C95D00BB5F28 /* Main.storyboard */; };
 		F0EA18B22832C95E00BB5F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18B12832C95E00BB5F28 /* Assets.xcassets */; };
 		F0EA18B52832C95E00BB5F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EA18B32832C95E00BB5F28 /* LaunchScreen.storyboard */; };
-		F0EA18BD2832E7EA00BB5F28 /* NewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */; };
+		F0EA18BD2832E7EA00BB5F28 /* DragNDropCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18BC2832E7EA00BB5F28 /* DragNDropCollectionViewController.swift */; };
 		F0EA18BF2832E95800BB5F28 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA18BE2832E95800BB5F28 /* CollectionViewCell.swift */; };
+		F0FD3FBB2842415300FCA8CA /* CellMovingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD3FBA2842415300FCA8CA /* CellMovingListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		6C8DB5E37F96A9CCDBF7E8D3 /* Pods-DragAndDropCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragAndDropCollectionView.release.xcconfig"; path = "Target Support Files/Pods-DragAndDropCollectionView/Pods-DragAndDropCollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		A0528A13642330088A80469C /* Pods_DragAndDropCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragAndDropCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B2874C283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellMovingCollectionViewController.swift; sourceTree = "<group>"; };
+		F0CBC499283DAB4A006A2D31 /* CellMovingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMovingListTableViewController.swift; sourceTree = "<group>"; };
 		F0EA18A52832C95D00BB5F28 /* DragAndDropCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragAndDropCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,8 +35,9 @@
 		F0EA18B12832C95E00BB5F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0EA18B42832C95E00BB5F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0EA18B62832C95E00BB5F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewController.swift; sourceTree = "<group>"; };
+		F0EA18BC2832E7EA00BB5F28 /* DragNDropCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragNDropCollectionViewController.swift; sourceTree = "<group>"; };
 		F0EA18BE2832E95800BB5F28 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F0FD3FBA2842415300FCA8CA /* CellMovingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMovingListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				F0EA18BE2832E95800BB5F28 /* CollectionViewCell.swift */,
+				F0FD3FBA2842415300FCA8CA /* CellMovingListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,9 +102,10 @@
 				F0CCEF0E283464F700892D48 /* View */,
 				F0EA18A82832C95D00BB5F28 /* AppDelegate.swift */,
 				F0EA18AA2832C95D00BB5F28 /* SceneDelegate.swift */,
+				F0CBC499283DAB4A006A2D31 /* CellMovingListTableViewController.swift */,
 				F0EA18AC2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift */,
 				F0B2874C283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift */,
-				F0EA18BC2832E7EA00BB5F28 /* NewCollectionViewController.swift */,
+				F0EA18BC2832E7EA00BB5F28 /* DragNDropCollectionViewController.swift */,
 				F0EA18AE2832C95D00BB5F28 /* Main.storyboard */,
 				F0EA18B12832C95E00BB5F28 /* Assets.xcassets */,
 				F0EA18B32832C95E00BB5F28 /* LaunchScreen.storyboard */,
@@ -224,10 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0EA18BF2832E95800BB5F28 /* CollectionViewCell.swift in Sources */,
+				F0FD3FBB2842415300FCA8CA /* CellMovingListTableViewCell.swift in Sources */,
 				F0EA18AD2832C95D00BB5F28 /* CellMovingFromCollectionDelegateViewController.swift in Sources */,
+				F0CBC49A283DAB4A006A2D31 /* CellMovingListTableViewController.swift in Sources */,
 				F0EA18A92832C95D00BB5F28 /* AppDelegate.swift in Sources */,
 				F0EA18AB2832C95D00BB5F28 /* SceneDelegate.swift in Sources */,
-				F0EA18BD2832E7EA00BB5F28 /* NewCollectionViewController.swift in Sources */,
+				F0EA18BD2832E7EA00BB5F28 /* DragNDropCollectionViewController.swift in Sources */,
 				F0B2874D283BB0A700085E60 /* CustomCellMovingCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
