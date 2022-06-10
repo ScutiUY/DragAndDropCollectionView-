@@ -2,16 +2,14 @@
 //  NewCollectionViewController.swift
 //  DragAndDropCollectionView
 //
-//  Created by 신의연 on 2022/05/17.
+//  Created by suy on 2022/06/10.
 //
 
 import UIKit
 
 class DragNDropCollectionViewController: UIViewController {
     
-    var longPress: UILongPressGestureRecognizer!
-    
-    let color: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple, .brown, .black, .gray, .cyan]
+    var color: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple, .brown, .black, .gray, .cyan]
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -19,6 +17,8 @@ class DragNDropCollectionViewController: UIViewController {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.dragDelegate = self
+        collectionView.dropDelegate = self
         return collectionView
     }()
     
@@ -42,7 +42,8 @@ class DragNDropCollectionViewController: UIViewController {
     
 }
 
-extension DragNDropCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DragNDropCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return color.count
     }
@@ -53,18 +54,46 @@ extension DragNDropCollectionViewController: UICollectionViewDelegate, UICollect
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
     
 }
 
-//extension DragNDropCollectionViewController: UICollectionViewDragDelegate, UICollectionViewDropDelegate {
-//    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-//        let item = NSItemProvider(object: NSItemProviderWriting)
-//        return []
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-//        
-//    }
-//    
-//    
-//}
+extension DragNDropCollectionViewController: UICollectionViewDragDelegate, UICollectionViewDropDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let item = color[indexPath.row]
+        let itemProvider = NSItemProvider(object: item)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        return [dragItem]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        
+        if let destinationIndexPath = coordinator.destinationIndexPath {
+            if let item = coordinator.items.first, let sourceIndexPath = item.sourceIndexPath {
+                collectionView.performBatchUpdates {
+                    color.remove(at: sourceIndexPath.item)
+                    color.insert(item.dragItem.localObject as! UIColor, at: destinationIndexPath.item)
+
+                    collectionView.deleteItems(at: [sourceIndexPath])
+                    collectionView.insertItems(at: [destinationIndexPath])
+                }
+                coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        guard collectionView.hasActiveDrag else { return UICollectionViewDropProposal(operation: .forbidden) }
+        return UICollectionViewDropProposal(operation: .move)
+    }
+    
+}
