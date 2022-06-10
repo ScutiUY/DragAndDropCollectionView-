@@ -97,7 +97,6 @@ class CustomCellMovingCollectionViewController: UIViewController {
     
     func endDragAtLocation(location: CGPoint) {
         
-        guard let dragView = draggingView else { return }
         guard let indexPath = originalIndexPath else { return }
         let cv = collectionView
         guard let datasource = cv.dataSource else { return }
@@ -114,8 +113,7 @@ class CustomCellMovingCollectionViewController: UIViewController {
             cell!.isHidden = false
         }
         
-        dragView.removeFromSuperview()
-        self.draggingIndexPath = nil
+        draggingView!.removeFromSuperview()
         self.draggingView = nil
         
         collectionView.collectionViewLayout.invalidateLayout()
